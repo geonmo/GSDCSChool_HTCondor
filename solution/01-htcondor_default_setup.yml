@@ -1,0 +1,36 @@
+---
+- name: Solution of Chapter1 
+  #gather_facts: no
+  hosts: all
+  vars:
+    - central_manager: "node1.intranet.local"
+    - password: "HTCondorPASSWORD"
+    - domain: "intranet.local"
+  tasks:
+    - name: Start firewalld service
+      service:
+        name: firewalld
+        state: started
+    - name: Check htcondor package 
+      command: rpm -q condor
+      register: condor_installed
+      ignore_errors: true
+    - name: Start htcondor installation procedure 
+      shell: "curl -fsSL https://get.htcondor.org | /bin/bash -s -- --no-dry-run --{{ htcondor_role }} {{ central_manager }} --password {{ password }}"
+      when: condor_installed.stdout.find('is not installed') != -1
+    - name: domain setup
+      copy: 
+        dest: /etc/condor/config.d/02-domain.config
+        content: "UID_DOMAIN={{ domain }}\nTRUST_UID_DOMAIN=true\nSOFT_UID_DOMAIN=true\n"
+      notify:
+        - restart htcondor
+  handlers:
+    - name: restart htcondor
+      service:
+        name: condor
+        state: restarted
+
+
+        
+
+

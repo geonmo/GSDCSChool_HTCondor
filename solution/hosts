@@ -7,7 +7,7 @@ node2.intranet.local
 node3.intranet.local
 
 [central_manager:vars]
-htcondor_role=central_manager
+htcondor_role=central-manager
 [submit:vars]
 htcondor_role=submit
 [execute:vars]
