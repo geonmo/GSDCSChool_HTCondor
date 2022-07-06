@@ -1,0 +1,7 @@
+[central_manager]
+node1.gX.gsdc.org
+[submit]
+node0.gX.gsdc.org
+[execute]
+node2.gX.gsdc.org
+node3.gX.gsdc.org
