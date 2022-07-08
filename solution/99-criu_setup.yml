@@ -1,11 +1,7 @@
 ---
-- name: Solution of Chapter1 
-  #gather_facts: no
+- name: CRIU setup  
   hosts: all
   vars:
-    - central_manager: "node1.intranet.local"
-    - password: "HTCondorPASSWORD"
-    - domain: "intranet.local"
   tasks:
     - name: Start firewalld service
       service:
