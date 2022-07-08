@@ -1,0 +1,26 @@
+- name: Setup NFS packages
+  gather_facts: no
+  hosts: all
+  tasks:
+    - name: Install nfs-utils
+      package:
+        name: nfs-utils
+        state: latest
+    - name: Create empty directory
+      file:
+        path: /shared
+        owner: root
+        group: root
+        state: directory
+        mode: "755" 
+
+- name: Configure nfs clients
+  hosts: submit, execute
+  gather_facts: no
+  tasks:
+    - name: make mountpoint
+      mount:
+        path: /shared
+        src: school-gateway:/shared
+        fstype: nfs
+        state: mounted

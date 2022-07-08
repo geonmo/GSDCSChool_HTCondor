@@ -1,0 +1,12 @@
+- name: Setup Private network
+  hosts: all
+  tasks:
+    - copy: 
+        dest: /etc/condor/config.d/05-private.conf 
+        content: "BIND_ALL_INTERFACES = FALSE\nNETWORK_INTERFACE = {{ ansible_eth1.ipv4.address }}\n\n" 
+      notify: restart_condor
+  handlers:
+    - name: restart_condor
+      service: 
+        name:  condor
+        state: restarted

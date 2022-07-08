@@ -38,7 +38,7 @@
     - name: Setup for HTCondor singularity supporting
       copy: 
         dest: /etc/condor/config.d/04-singularity.config
-        content: "SINGULARITY_JOB = !isUndefined(TARGET.SingularityImage)\nSINGULARITY_IMAGE_EXPR = TARGET.SingularityImage\nSINGULARITY_TARGET_DIR = /srv\nMOUNT_UNDER_SCRATCH = /tmp, /var/tmp\nSINGULARITY_BIND_EXPR=ifThenElse( isUndefined(TARGET.SingularityBind),\"/home\",TARGET.SingularityBind)\n"
+        content: "SINGULARITY_JOB = !isUndefined(TARGET.SingularityImage)\nSINGULARITY_IMAGE_EXPR = TARGET.SingularityImage\nSINGULARITY_TARGET_DIR = /srv\nMOUNT_UNDER_SCRATCH = /tmp, /var/tmp\nSINGULARITY_BIND_EXPR=ifThenElse( isUndefined(TARGET.SingularityBind),\"/home\",TARGET.SingularityBind)\nSINGULARITY_EXTRA_ARGUMENTS=ifThenElse( isUndefined(TARGET.SingularityExtraArgs),\"\",TARGET.SingularityExtraArgs)\n"
       notify:
         - restart htcondor
   handlers:
