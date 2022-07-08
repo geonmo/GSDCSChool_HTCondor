@@ -1,6 +1,7 @@
 ---
 - name: Solution of Chapter1 
-  #gather_facts: no
+  gather_facts: no
+  serial: 4
   hosts: all
   vars:
     - central_manager: "node1.intranet.local"
