@@ -13,7 +13,7 @@ requirements = (Machine =?= "node2.intranet.local")
 #transfer_input_files = singularity_test.sh
 #transfer_output_files = hello/world.txt
 
-+SingularityImage = "/shared/container_image/geant4-centos7_latest.sif"
++SingularityImage = "/shared/container_images/geant4_wCRIU.sif"
 +SingularityBind = "/shared"
 +SingularityExtraArgs= "--add-caps all"
 
