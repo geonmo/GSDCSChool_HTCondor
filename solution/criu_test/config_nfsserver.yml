@@ -42,4 +42,5 @@
         path: /shared
         src: node0.intranet.local:/mnt/disk
         fstype: nfs
+        opts: "defaults,_netdev"
         state: mounted
