@@ -1,0 +1,4 @@
+---
+central_manager="node1.g0.gsdc.org"
+password="HTCondorPASSWORD"
+domain="gsdc.org"
