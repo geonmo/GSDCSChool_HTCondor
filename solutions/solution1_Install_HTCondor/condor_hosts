@@ -1,0 +1,14 @@
+[central_manager]
+node1.intranet.local
+[submit]
+node0.intranet.local
+[execute]
+node2.intranet.local
+node3.intranet.local
+
+[central_manager:vars]
+htcondor_role=central-manager
+[submit:vars]
+htcondor_role=submit
+[execute:vars]
+htcondor_role=execute
