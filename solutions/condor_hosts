@@ -1,10 +1,10 @@
 [central_manager]
-node1.intranet.local
+node1.g0.gsdc.org
 [submit]
-node0.intranet.local
+node0.g0.gsdc.org
 [execute]
-node2.intranet.local
-node3.intranet.local
+node2.g0.gsdc.org
+node3.g0.gsdc.org
 
 [central_manager:vars]
 htcondor_role=central-manager

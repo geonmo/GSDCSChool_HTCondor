@@ -4,9 +4,9 @@
   serial: 4
   hosts: all
   vars:
-    - central_manager: "node1.intranet.local"
+    - central_manager: "node1.g0.gsdc.org"
     - password: "HTCondorPASSWORD"
-    - domain: "intranet.local"
+    - domain: "gsdc.org"
   tasks:
     - name: Start firewalld service
       service:
