@@ -17,10 +17,12 @@
 - name: Configure nfs clients
   hosts: submit, execute
   gather_facts: no
+  vars_files:
+    - ../vars.yml
   tasks:
     - name: make mountpoint
       mount:
         path: /shared
-        src: school-gateway:/shared
+        src: "{{ nfs_server }}:/shared"
         fstype: nfs
         state: mounted
