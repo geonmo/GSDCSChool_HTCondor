@@ -1,0 +1,9 @@
+executable = date.sh
+universe = vanilla
+output = out.txt
+error = err.txt
+log   = submit.log
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+queue
