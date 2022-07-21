@@ -7,8 +7,17 @@ node2.g0.gsdc.org
 node3.g0.gsdc.org
 
 [central_manager:vars]
-htcondor_role=central-manager
+htcondor_role="central-manager"
+central_manager="node1.g0.gsdc.org"
+password="HTCondorPASSWORD"
+domain="gsdc.org"
 [submit:vars]
 htcondor_role=submit
+central_manager="node1.g0.gsdc.org"
+password="HTCondorPASSWORD"
+domain="gsdc.org"
 [execute:vars]
 htcondor_role=execute
+central_manager="node1.g0.gsdc.org"
+password="HTCondorPASSWORD"
+domain="gsdc.org"
