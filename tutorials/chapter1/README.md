@@ -22,6 +22,7 @@ HTCondor를 curl 명령으로 설치하고 condor_ping, condor_status로 확인�
    ```bash
    (ex) condor_status / condor_status [machine name] / condor_status -l [machine name]
    ```
+   * -l 옵션으로 ClassAds 정보 확인이 가능합니다.
 1.condor\_ping : 머신간 연결 상태 확인
    ```bash
    condor_ping -pool nodeX.gX.gsdc.org -type [Daemon] -table [Instruction or ALL]
