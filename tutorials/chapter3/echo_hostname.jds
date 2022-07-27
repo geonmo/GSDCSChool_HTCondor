@@ -1,5 +1,5 @@
-JobBatchName = GroupX_Chapter3_CountWord_for_Novel_$(Cluster)
-executable = count_word.py
+JobBatchName = GroupX_Chapter3_echo_hostname_$(Cluster)
+executable = echo_hostname.sh
 universe = vanilla 
 output =  
 error = 
@@ -8,4 +8,4 @@ log   =
 should_transfer_files   = 
 when_to_transfer_output = 
 transfer_input_files    = 
-queue
+queue N
