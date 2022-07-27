@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "Date Command"
-sleep X
-echo "Date Command"
+date
+sleep 30
+date
