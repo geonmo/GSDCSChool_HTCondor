@@ -1,5 +1,5 @@
 JobBatchName = GroupX_Chapter3_CountWord_for_Novel_$(Cluster)
-executable = ??
+executable = count_word.py
 arguments =  ??
 environment = "LANG=en_US.UTF-8"
 universe = vanilla 
