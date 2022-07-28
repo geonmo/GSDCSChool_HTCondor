@@ -1,3 +1,4 @@
-err*.txt
-out*.txt
-submit.log
+*.log
+*.out
+*.err
+*.txt
