@@ -4,6 +4,7 @@ universe = vanilla
 output = ??
 error =  ??
 requirements = ??
+request_cpus = 1
 log   =  submit.log
 
 should_transfer_files   = YES
