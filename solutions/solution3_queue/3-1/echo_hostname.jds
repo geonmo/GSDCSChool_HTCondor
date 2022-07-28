@@ -1,11 +1,10 @@
 JobBatchName = GroupX_Chapter3_echo_hostname_$(Cluster)
 executable = echo_hostname.sh
 universe = vanilla 
-output =  
-error = 
-log   = 
+output = queue.$(Process).out  
+error =  queue.$(Process).err
+log   =  submit.log
 
-should_transfer_files   = 
-when_to_transfer_output = 
-transfer_input_files    = 
-queue N
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+queue 16
