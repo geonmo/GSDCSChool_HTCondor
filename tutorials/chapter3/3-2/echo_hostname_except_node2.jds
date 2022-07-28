@@ -1,9 +1,10 @@
 JobBatchName = GroupX_Chapter3_echo_hostname_$(Cluster)
-executable = echo_hostname.sh
+executable = echo_hostname_groupnum.sh
 universe = vanilla 
-output = ?? 
+output = ??
 error =  ??
-log   = submit.log
+requirements = ??
+log   =  submit.log
 
 should_transfer_files   = YES
 when_to_transfer_output = ON_EXIT
