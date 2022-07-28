@@ -1,0 +1,12 @@
+JobBatchName = GroupX_Chapter3_CountWord_for_Novel_$(Cluster)
+executable = count_word.py
+arguments = $(NOVEL_FILE)
+universe = vanilla 
+output = $(NOVEL_FILE).out 
+error = $(NOVEL_FILE).err
+log   = condor.log
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = $(NOVEL_FILE)
+queue NOVEL_FILE matching files *.txt
