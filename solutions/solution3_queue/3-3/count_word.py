@@ -29,7 +29,7 @@ if __name__ == "__main__":
     files= sys.argv[1:]
     wc = WordCounter()
     for novel in files :
-        with open(novel,encoding='utf-8') as infile:
+        with open(novel,'r',encoding='utf-8-sig') as infile:
             word_tuples = []
             for line in infile.readlines():
                 wc.load(line.strip())
