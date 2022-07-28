@@ -1,0 +1,11 @@
+JobBatchName = GroupX_Chapter3_echo_hostname_$(Cluster)
+executable = echo_hostname.sh
+universe = vanilla 
+output =  
+error = 
+log   = 
+
+should_transfer_files   = 
+when_to_transfer_output = 
+transfer_input_files    = 
+queue N
