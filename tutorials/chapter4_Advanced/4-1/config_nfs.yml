@@ -1,0 +1,26 @@
+- name: Setup NFS packages
+  gather_facts: no
+  hosts: all
+  tasks:
+    - name: Install nfs-utils
+      package:
+        name: nfs-utils
+        state: latest
+    - name: Create empty directory
+      file:
+        path: /shared
+        state: directory
+      ignore_errors: true
+
+- name: Configure nfs clients
+  hosts: submit, execute
+  gather_facts: no
+  vars_files:
+    - ../../ansible_setup/vars.yml
+  tasks:
+    - name: make mountpoint
+      mount:
+        path: /shared
+        src: "{{ nfs_server }}:/shared"
+        fstype: nfs
+        state: mounted
