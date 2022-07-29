@@ -17,5 +17,5 @@
 1. ```/shared/user/$USER```디렉토리로 이동한 후 ```should_transfer_files = IF_NEEDED``` 상태로 작업을 제출합니다.
 1. Output 파일의 내용이 같은지 확인합니다. 
 ### 토의
-* 왜 **IF_NEEDED**가 기본값일까요? 어떤 컴퓨팅 환경인 경우에 ```should_transfer_files=IF_NEEDED```가 유리한지 논의해봅시다. 
+* 왜 **IF_NEEDED**가 기본값일까요? 어떤 컴퓨팅 환경일 때, ```should_transfer_files=IF_NEEDED```가 유리한지 논의해봅시다. 
 
