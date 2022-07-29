@@ -1,4 +1,4 @@
-JobBatchName = FILESYSTEM Domain Checking.
+JobBatchName = FILESYSTEM Domain Checking $(Cluster)
 executable = myinfo.sh
 universe = vanilla
 output = myinfo_$SUBSTR(HOSTNAME,0,5).out
