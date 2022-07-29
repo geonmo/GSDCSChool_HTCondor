@@ -7,7 +7,7 @@
 ## 실습 4-1
 ### 사전 준비
 1. ```./nfs_setup.sh```을 실행하여 NFS 공유디렉토리 공간을 준비합니다. (/shared) 
-1. ```/shared/user/$USER``` 디렉토리에 myinfo 관련 파일들이 잘 전송되었는지 확인합니다.
+1. ```/shared/user/$USER``` 디렉토리에 myinfo 관련 파일들이 잘 복사되었는지 확인합니다.
 ### 실습
 1. 교재를 참고하여 node0~2 서버들에 UID_DOMAIN과 FILESYSTEM_DOMAIN 내용을 설정합니다. (단, node3은 제외합니다.)
 1. ```myinfo.jds``` 작업을 제출한 후, 결과 파일을 확인합니다. 수행된 계정명이 동일합니까?
