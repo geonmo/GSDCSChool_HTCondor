@@ -16,5 +16,6 @@
 1. 작업이 수행되지 않는다면 ```condor_q -better``` 명령으로 문제를 확인해봅니다. 
 1. ```/shared/user/$USER```디렉토리로 이동한 후 ```should_transfer_files = IF_NEEDED``` 상태로 작업을 제출합니다.
 1. Output 파일의 내용이 같은지 확인합니다. 
-
+### 토의
+* 왜 IF_NEEDED가 기본값일까요? 어떤 컴퓨팅 환경인 경우에 **should_transfer_files=IF_NEEDED**가 가능한지 논의해봅시다. 
 
