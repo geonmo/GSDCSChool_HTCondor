@@ -16,7 +16,7 @@
   hosts: submit, execute
   gather_facts: no
   vars_files:
-    - ../../ansible_setup/vars.yml
+    - ../../../ansible_setup/vars.yml
   tasks:
     - name: make mountpoint
       mount:
