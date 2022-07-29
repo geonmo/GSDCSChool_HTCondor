@@ -11,4 +11,8 @@ yum install -y git ansible
 ```bash
 git clone https://github.com/geonmo/GSDCSchool_XRootD_Scripts.git
 ```
-3. 
+3. 본인의 조별 숫자로 ansible 세팅 작업을 수행합니다. (chapter4부터 필요)
+```bash
+### 4조일 경우,
+./group_setting.sh 4
+``` 
