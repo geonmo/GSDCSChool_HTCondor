@@ -1,0 +1,24 @@
+---
+- name: 실습4-1 UID와 FILESYSTEM 도메인 
+  gather_facts: no
+  serial: 4
+  hosts: central_manager,submit,node2
+  vars_files:
+    - ../../ansible_setup/vars.yml
+  tasks:
+    - name: 도메인 정보를 설정합니다.
+      copy: 
+        dest: /etc/condor/config.d/02-domain.config
+        content: "UID_DOMAIN={{ domain }}\nTRUST_UID_DOMAIN=true\nSOFT_UID_DOMAIN=true\nFILESYSTEM_DOMAIN={{ domain }}\n"
+      notify:
+        - restart htcondor
+  handlers:
+    - name: restart htcondor
+      service:
+        name: condor
+        state: restarted
+
+
+        
+
+

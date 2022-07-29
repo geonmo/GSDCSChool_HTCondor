@@ -1,0 +1,24 @@
+---
+- name: 실습4-2 동적 슬롯 풀이
+  gather_facts: no
+  serial: 4
+  hosts: all
+  vars_files:
+    - ../../ansible_setup/vars.yml
+  tasks:
+    - name: 동적 슬롯을 설정합니다.
+      copy: 
+        dest: /etc/condor/config.d/03-dynamic.config
+        content: "NUM_SLOTS = 1\nNUM_SLOTS_TYPE_1 = 1\nSLOT_TYPE_1 = 100%\nSLOT_TYPE_1_PARTITIONABLE = TRUE\nCONSUMPTION_POLICY = true\n"
+      notify:
+        - restart htcondor
+  handlers:
+    - name: restart htcondor
+      service:
+        name: condor
+        state: restarted
+
+
+        
+
+

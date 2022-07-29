@@ -1,0 +1,24 @@
+---
+- name: 실습4-3 Singularity  
+  gather_facts: no
+  serial: 4
+  hosts: all
+  vars_files:
+    - ../../ansible_setup/vars.yml
+  tasks:
+    - name: Singularity 컨테이너 설정을 합니다.
+      copy: 
+        dest: /etc/condor/config.d/04-singularity.config
+        content: "SINGULARITY_JOB = !isUndefined(TARGET.SingularityImage)\nSINGULARITY_IMAGE_EXPR = TARGET.SingularityImage\nSINGULARITY_TARGET_DIR = /srv\nMOUNT_UNDER_SCRATCH = /tmp, /var/tmp\nSINGULARITY_BIND_EXPR=ifThenElse( isUndefined(TARGET.SingularityBind),\"/home\",TARGET.SingularityBind)\nSINGULARITY_EXTRA_ARGUMENTS=ifThenElse( isUndefined(TARGET.SingularityExtraArgs),\"\",TARGET.SingularityExtraArgs)\n"
+      notify:
+        - restart htcondor
+  handlers:
+    - name: restart htcondor
+      service:
+        name: condor
+        state: restarted
+
+
+        
+
+
