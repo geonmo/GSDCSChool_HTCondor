@@ -5,10 +5,12 @@ node0.g0.gsdc.org
 [execute]
 node2.g0.gsdc.org
 node3.g0.gsdc.org
-[node2]
+node4.g0.gsdc.org
+[node_except]
 node2.g0.gsdc.org
-[node3]
+[node_etc]
 node3.g0.gsdc.org
+node4.g0.gsdc.org
 
 [central_manager:vars]
 htcondor_role=central-manager
