@@ -1,0 +1,20 @@
+JobBatchName = Singulairty Test $(Cluster)
+executable = geant4_run.sh
+universe = vanilla
+output = iodine_$(Process).out
+error = iodine_$(Process).err
+log   = submit.log
+## Sync environment variables
+### PATH 변수의 동기화 필요
+getenv = True
+
++SingularityImage = "/shared/container_images/geant4-runtime_latest.sif"
++SingularityBind = "/shared"
+
+transfer_output_files = EnergyDeposition_iodine.out, brachytherapy.root, primary.root
+transfer_output_remaps = "EnergyDeposition_iodine.out = EnergyDeposition_iodine_$(Process).out ; brachytherapy.root=brachytherapy_$(Process).root; primary.root = primary_$(Process).root"
+
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+queue 4
