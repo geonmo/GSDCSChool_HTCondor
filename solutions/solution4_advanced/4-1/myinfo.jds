@@ -1,0 +1,12 @@
+JobBatchName = FILESYSTEM Domain Checking $(Cluster)
+executable = myinfo.sh
+universe = vanilla
+output = myinfo_$SUBSTR(HOSTNAME,0,5).out
+error = myinfo_$SUBSTR(HOSTNAME,0,5).err
+log   = submit.log
+requirements = (Machine =?= "$(HOSTNAME)")
+
+#should_transfer_files = IF_NEEDED
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+queue HOSTNAME in node2.g0.gsdc.org,node3.g0.gsdc.org
