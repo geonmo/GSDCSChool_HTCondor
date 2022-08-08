@@ -4,7 +4,7 @@
   serial: 4
   hosts: all
   vars_files:
-    - ../../ansible_setup/vars.yml
+    - ../../../ansible_setup/vars.yml
   tasks:
     - name: 동적 슬롯을 설정합니다.
       copy: 

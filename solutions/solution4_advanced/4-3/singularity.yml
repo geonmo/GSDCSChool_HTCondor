@@ -4,7 +4,7 @@
   serial: 4
   hosts: all
   vars_files:
-    - ../../ansible_setup/vars.yml
+    - ../../../ansible_setup/vars.yml
   tasks:
     - name: Singularity 컨테이너 설정을 합니다.
       copy: 
