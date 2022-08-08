@@ -16,7 +16,7 @@
 1. 아래의 내용으로 수정 후, 실행을 해봅시다.
 1. 실행할 Macro : ```FlexiSourceMacro.mac```
 1. 결과파일 : ```EnergyDeposition_Flexi.out, brachytherapy.root, primary.root```
-1. primary.root 파일을 비교해보고, 위의 [I-125](https://en.wikipedia.org/wiki/Iodine-125)와 [Ir-192](의 에너지 스펙트럼이 알려진 것과 같은지 비교해보세요.
+1. primary.root 파일을 비교해보고, 위의 [I-125](https://en.wikipedia.org/wiki/Iodine-125)와 [Ir-192](https://www.researchgate.net/figure/Iridium-192-gamma-spectrum_tbl1_228604512)의 에너지 스펙트럼이 알려진 것과 같은지 비교해보세요.
 
 ## 토의
 1. 실행 중 컴파일 과정을 되풀이하지 않도록 하려면 어떻게 구성해야 할까요?
