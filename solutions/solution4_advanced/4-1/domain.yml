@@ -2,7 +2,7 @@
 - name: 실습4-1 UID와 FILESYSTEM 도메인 
   gather_facts: no
   serial: 4
-  hosts: central_manager,submit,node_etc
+  hosts: nodeX.gY.gsdc.org 
   vars_files:
     - ../../../ansible_setup/vars.yml
   tasks:

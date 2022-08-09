@@ -2,7 +2,7 @@
 - name: 실습1 결과 설정 
   gather_facts: no
   serial: 4
-  hosts: all
+  hosts: nodeX.gY.gsdc.org
   vars_files:
     - ../../ansible_setup/vars.yml
   tasks:
