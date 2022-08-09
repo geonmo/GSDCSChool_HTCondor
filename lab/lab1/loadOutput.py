@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 
-import os
+import os,sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,13 +12,19 @@ mpl.rcParams['axes.unicode_minus'] = False
 
 
 ## 한글 폰트
-
 path = "%s/.fonts/NanumGothicCoding.ttf"%(os.environ["HOME"])
 font_name = fm.FontProperties(fname=path, size=50).get_name()
 print(font_name)
 plt.rc('font', family=font_name)
 
-data = pd.read_csv("output.csv", header=None, names=["date", "journal","keyword","count"])
+## 파일 입력되었는지 확인,
+if len(sys.argv) ==2 :
+  wordparsing_file = sys.argv[1]
+else:
+  wordparsing_file = "output.csv"
+
+print("입력된 파일은 %s"%(wordparsing_file))
+data = pd.read_csv(wordparsing_file, header=None, names=["date", "journal","keyword","count"])
 
 data.head()
 
