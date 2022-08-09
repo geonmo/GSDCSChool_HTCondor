@@ -9,7 +9,7 @@ yum install -y git ansible
 2. 실습코드를 다운로드 받습니다.
 (본인이 github에 익숙하다면 본인의 저장소에 추가하셔서 적용하셔도 상관 없습니다.)
 ```bash
-git clone https://github.com/geonmo/GSDCSchool_XRootD_Scripts.git
+git clone https://github.com/geonmo/GSDCSChool_HTCondor.git
 ```
 3. 본인의 조별 숫자로 ansible 세팅 작업을 수행합니다. (chapter4부터 필요)
 ```bash
