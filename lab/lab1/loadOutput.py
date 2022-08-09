@@ -12,7 +12,8 @@ mpl.rcParams['axes.unicode_minus'] = False
 
 
 ## 한글 폰트
-path = "/home/gsdc/.fonts/NanumGothicCoding.ttf"
+
+path = "%s/.fonts/NanumGothicCoding.ttf"%(os.environ["HOME"])
 font_name = fm.FontProperties(fname=path, size=50).get_name()
 print(font_name)
 plt.rc('font', family=font_name)
