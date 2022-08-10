@@ -10,6 +10,7 @@
 1. ```/shared/user/$USER``` 디렉토리에 myinfo 관련 파일들이 잘 복사되었는지 확인합니다.
 ### 실습
 1. 교재를 참고하여 node0, node1, node2, node4 서버(node3만 제외)에 UID_DOMAIN과 FILESYSTEM_DOMAIN 내용을 설정합니다.
+   * 설정한 노드들에서 ```systemctl restart condor``` 로 서비스를 재시작 합니다.
 1. ```myinfo.jds``` 작업을 제출한 후, 결과 파일을 확인합니다. 수행된 계정명이 동일합니까?
 1. ```myinfo.jds``` 파일의 ```should_transfer_files```를  **YES** 에서 **IF_NEEDED**로 변경합니다.
 1. 작업 다시 제출하고, 작업들이 잘 처리되는지 확인합니다.
