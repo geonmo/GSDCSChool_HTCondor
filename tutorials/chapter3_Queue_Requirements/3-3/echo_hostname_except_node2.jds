@@ -3,7 +3,7 @@ executable = echo_hostname_groupnum.sh
 universe = vanilla 
 output = host_group_$(Process).out
 error =  host_group_$(Process.).err
-requirements = ??
+requirements = (machine =!= "node2.g0.gsdc.org")
 request_cpus = 1
 log   =  submit.log
 
