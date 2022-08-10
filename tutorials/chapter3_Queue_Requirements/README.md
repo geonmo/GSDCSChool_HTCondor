@@ -8,7 +8,7 @@
 ### 실습 3-1
 1. echo_hostname.sh 파일은 현재 실행 중인 노드의 hostname을 확인하는 스크립트입니다.
 1. echo_hostname.jds를 이용하여 16번의 작업을 제출하여 보십시오.
-1. Output 파일의 이름은 반드시 ```queue.XX.out``` 이여야 합니다.
+1. Output 파일의 이름은 반드시 ```queue.XX.out  (eg) queue.0.out, queue.1.out``` 이여야 합니다.
 
 ### 실습 3-2
 1. downloadnovel.sh 를 실행하여 소설 파일들을 복사합니다.
