@@ -37,8 +37,12 @@ dgg = dg_sort.reset_index()
 
 print("주요 키워드?")
 print(dgg.head(20))
+#print(dgg_filtered.head(20))
+
 ### 특정 단어를 
 
 dgg[:20].plot(x="keyword",y="count")
+#dgg_filtered[:20].plot(x="keyword",y="count")
+
 plt.show()
 
