@@ -7,14 +7,14 @@
 ### 실습
 1. Submit node와 Worker nodes들에 ```yum install -y singularity```로 Singularity 프로그램을 설치합니다.
 1. 해당 서버들에 ```/etc/condor/config.d/04-singularity.config``` 설정을 합니다.
-   * ```bash
-     SINGULARITY_JOB = !isUndefined(TARGET.SingularityImage)
-     SINGULARITY_IMAGE_EXPR = TARGET.SingularityImage
-     SINGULARITY_TARGET_DIR = /srv
-     MOUNT_UNDER_SCRATCH = /tmp, /var/tmp
-     SINGULARITY_BIND_EXPR=ifThenElse( isUndefined(TARGET.SingularityBind),"/home",TARGET.SingularityBind)
-     SINGULARITY_EXTRA_ARGUMENTS=ifThenElse( isUndefined(TARGET.SingularityExtraArgs),"",TARGET.SingularityExtraArgs)
-     ```
+   ```bash
+   SINGULARITY_JOB = !isUndefined(TARGET.SingularityImage)
+   SINGULARITY_IMAGE_EXPR = TARGET.SingularityImage
+   SINGULARITY_TARGET_DIR = /srv
+   MOUNT_UNDER_SCRATCH = /tmp, /var/tmp
+   SINGULARITY_BIND_EXPR=ifThenElse( isUndefined(TARGET.SingularityBind),"/home",TARGET.SingularityBind)
+   SINGULARITY_EXTRA_ARGUMENTS=ifThenElse( isUndefined(TARGET.SingularityExtraArgs),"",TARGET.SingularityExtraArgs)
+   ```
 1. 설치 후, HTCondor 서비스를 재시작 합니다. ```systemctl restart condor```
 1. Submit node에서 제공된 **geant4_run.jds**와 **geant4_run.sh** 파일을 이용하여 작업을 제출합니다.
    * geant4_run.jds 에 빠진 내용을 채워봅시다.
