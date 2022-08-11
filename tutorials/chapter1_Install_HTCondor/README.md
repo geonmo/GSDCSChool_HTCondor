@@ -10,6 +10,11 @@
 1. 각 노드에 본인의 계정을 추가하십시오.
    * 내용 설명은 [PPT 자료](https://cernbox.cern.ch/index.php/s/cXLUjWOaN5yKgw1)를 참고하십시오.
 ### 주요 명령어
+1. systemctl : 데몬(서비스)을 다루기 위한 명령어입니다.
+   * systemctl status [서비스] : 해당 서비스의 상태 확인
+   * systemctl start [서비스] : 해당 서비스 시작 (동작 중일 때 아무런 작동을 안함)
+   * systemctl stop [서비스] : 해당 서비스 정지 
+   * systemctl restart [서비스] : 해당 서비스를 재시작
 1. export : 현재 shell 환경에 환경변수를 설정하거나 수정합니다.
    ```bash
    export central_manager_name="node1.gX.gsdc.org"
