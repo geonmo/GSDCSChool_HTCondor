@@ -8,7 +8,7 @@
 ### 실습내용 
 1. HTCondor를 curl 명령으로 설치하고 condor\_ping, condor\_status로 확인하십시오.
 1. 각 노드에 본인의 계정을 추가하십시오.
-   * 내용 설명은 [PPT 자료](https://cernbox.cern.ch/index.php/s/cXLUjWOaN5yKgw1)를 참고하십시오.
+   * 내용 설명은 [PPT 자료](https://cernbox.cern.ch/index.php/s/lwysXmJZFG6DfH5)를 참고하십시오.
 ### 주요 명령어
 1. systemctl : 데몬(서비스)을 다루기 위한 명령어입니다.
    * systemctl status [서비스] : 해당 서비스의 상태 확인
