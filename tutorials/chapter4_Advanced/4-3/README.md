@@ -20,6 +20,7 @@
    * geant4_run.jds 에 빠진 내용을 채워봅시다.
       * geant4 이미지 위치 : ```/shared/container_images/geant4-runtime_latest.sif```
       * 바인드 디렉토리 : ```/shared```
+      * transfer_output_files 목록은 아래 transfer_output_remaps 설정을 참고하여 작성합시다.
 1. 실행 후, brachytherapy_X.root 파일과 primary_X.root 파일이 생성되었는지를 확인합니다.
 1. ROOT 프레임워크를 설치합니다. ```yum install -y root```
 1. ```hadd brachytherapy.root brachytherapy_*.root```, ```hadd primary.root primary_*.root```로 데이터 파일들을 합칩니다.
