@@ -7,10 +7,14 @@
 ## Chapter 정보
 ### 실습내용 
 1. HTCondor를 curl 명령으로 설치하고 condor\_ping, condor\_status로 확인하십시오.
-
 1. 각 노드에 본인의 계정을 추가하십시오.
    * 내용 설명은 [PPT 자료](https://cernbox.cern.ch/index.php/s/cXLUjWOaN5yKgw1)를 참고하십시오.
 ### 주요 명령어
+1. export : 현재 shell 환경에 환경변수를 설정하거나 수정합니다.
+   ```bash
+   export central_manager_name="node1.gX.gsdc.org"
+   export htcondor_password="[원하는 패스워드]"
+   ```
 1. curl : 인터넷으로부터 파일을 다운로드 받습니다.
    ```bash
    sudo curl –fsSL https://get.htcondor.org | /bin/bash –s -- --no-dry-run --[ROLE] $central_manager_name --password $htcondor_password
