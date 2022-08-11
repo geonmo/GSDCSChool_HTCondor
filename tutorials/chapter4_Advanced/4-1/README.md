@@ -10,6 +10,13 @@
 1. ```/shared/user/$USER``` 디렉토리에 myinfo 관련 파일들이 잘 복사되었는지 확인합니다.
 ### 실습
 1. 교재를 참고하여 node0, node1, node2, node4 서버(node3만 제외)에 UID_DOMAIN과 FILESYSTEM_DOMAIN 내용을 설정합니다.
+   * /etc/condor/config.d/02-domain.config
+      ```bash
+      UID_DOMAIN=gsdc.org
+      TRUST_UID_DOMAIN=true
+      SOFT_UID_DOMAIN=true
+      FILESYSTEM_DOMAIN=gsdc.org
+      ``` 
    * 설정한 노드들에서 ```systemctl restart condor``` 로 서비스를 재시작 합니다.
    * ```systemctl status condor```로 재시작이 되었는지 확인합니다.
 1. ```myinfo.jds``` 작업을 제출한 후, 결과 파일을 확인합니다. 수행된 계정명이 동일합니까?
