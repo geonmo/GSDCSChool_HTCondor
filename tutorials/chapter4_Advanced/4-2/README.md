@@ -14,6 +14,7 @@
          SLOT_TYPE_1_PARTITIONABLE = TRUE
          CONSUMPTION_POLICY = true
          ```
+   * condor 서비스 재시작    
        * ```systemctl restart condor```
 1. ```condor_status```를 하였을 때, node2와 node3의 슬롯 개수의 차이가 납니까?
 1. **dynamic_check.jds** 을 제출하여 슬롯에 할당된 자원을 확인합니다.
