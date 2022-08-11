@@ -16,3 +16,9 @@ git clone https://github.com/geonmo/GSDCSChool_HTCondor.git
 ### 4조일 경우,
 ./group_setting.sh 4
 ``` 
+4. 모든 서버에 접속하여 계정을 생성하고 패스워드를 지정합니다.
+```bash
+ssh nodeY.gX
+useradd -m -G wheel -u [UID] [ACCOUNT]
+passwd [ACCOUNT]
+```
