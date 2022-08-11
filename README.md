@@ -12,7 +12,7 @@ GSDC School의 HTCondor 수업을 위한 코드 제공합니다.
    ```bash
    git clone https://github.com/geonmo/GSDCSChool_HTCondor.git
    ```
-1. 본인의 조별 숫자로 ansible 세팅 작업을 수행합니다. (chapter4부터 필요)
+1. 본인의 조별 숫자로 ansible 세팅 작업을 수행합니다. 
    ```bash
    ### 4조일 경우,
    ./group_setting.sh 4
