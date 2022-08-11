@@ -23,3 +23,5 @@ GSDC School의 HTCondor 수업을 위한 코드 제공합니다.
    useradd -m -G wheel -u [UID] [ACCOUNT]
    passwd [ACCOUNT]
    ```
+   
+# [PPT 자료 다운로드](https://cernbox.cern.ch/index.php/s/lwysXmJZFG6DfH5)
