@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+NODE_COUNT = 4
+
+Vagrant.configure("2") do |config|
+    config.vm.provider "virtualbox" do |vb|
+     # Display the VirtualBox GUI when booting the machine
+     vb.gui = false
+     # Customize the amount of memory on the VM:
+     vb.memory = "2048"
+     vb.linked_clone = true     
+   end
+
+  NODE_COUNT.times do |i|
+    node_id = "node#{i}"
+    ip_addressPublic = "192.168.10.#{i+3}"
+    ip_address10 = "192.168.10.#{i+3}"
+    ip_address20 = "192.168.20.#{i+3}"
+    config.vm.define node_id do |node|
+      node.vm.box = "geerlingguy/centos7"
+      node.vm.box_download_insecure=true
+      node.vm.hostname = "#{node_id}.intranet.local"      
+      
+      node.vm.network "private_network", ip: "#{ip_address10}", hostname: false
+      node.vm.network "forwarded_port", guest: 22, host: "#{i+2222}"
+      node.vm.provision "shell", inline: <<-SHELL
+        yum install -y git vim centos-release-ansible-29.noarch
+        yum install -y ansible
+      SHELL
+    end
+  end  
