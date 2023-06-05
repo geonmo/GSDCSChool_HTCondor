@@ -5,7 +5,7 @@
 
 ## 실습 4-3
 ### 실습
-1. Submit node와 Worker nodes들에 ```yum install -y singularity```로 Singularity 프로그램을 설치합니다.
+1. Submit node와 Worker nodes들에 ```yum install -y apptainer apptainer-suid```로 Apptainer(기존 Singularity) 프로그램을 설치합니다.
 1. 해당 서버들에 ```/etc/condor/config.d/04-singularity.config``` 설정을 합니다.
    ```bash
    SINGULARITY_JOB = !isUndefined(TARGET.SingularityImage)
