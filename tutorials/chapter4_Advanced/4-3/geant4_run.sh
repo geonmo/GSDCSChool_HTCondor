@@ -2,14 +2,14 @@
 
 #export PATH=$PATH:/usr/bin:/bin
 
-echo "0. cat /etc/lsb-release"
-cat /etc/lsb-release
+echo "0. OS 버전 확인"
+cat /etc/redhat-release
 
 echo "1. Geant4 환경변수를 로드합니다."
-source /opt/geant4/bin/geant4.sh
+source /usr/share/geant4/geant4make/geant4make.sh
 
 echo "2. Geant4 실습 문제를 복사합니다."
-cp -rf /opt/geant4/share/Geant4-11.0.0/examples/advanced/brachytherapy/ ./
+cp -rf /shared/examples/advanced/brachytherapy/ ./
 
 echo "3. Geant4 Adv 실습 문제 소스코드를 컴파일합니다."
 mkdir brachy_build
