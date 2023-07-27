@@ -13,7 +13,7 @@ else
   sed -i "s/node\([0-9]\).g[0-9].23.gsdc.org/node\1.g$1.23.gsdc.org/g" ansible_setup/vars.yml  
   sed -i "s/node\([0-9]\).g[0-9].23.gsdc.org/node\1.g$1.23.gsdc.org/g" tutorials/chapter4_Advanced/4-1/myinfo.jds 
 
-  if [[ $# -le 3 ]]; then
+  if [[ $1 -le 3 ]]; then
     echo "school gateway 1"
     sed -i "s/nfs_server :/nfs_server : \"10.10.10.226\"/g" ansible_setup/vars.yml
   else
