@@ -27,11 +27,3 @@ htcondor_role=submit
 [execute:vars]
 htcondor_role=execute
 
-[node0:vars]
-htcondor_role=central-manager
-[node1:vars]
-htcondor_role=submit
-[node2:vars]
-htcondor_role=execute
-[node3:vars]
-htcondor_role=execute
