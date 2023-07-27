@@ -40,13 +40,17 @@
         content: "NUM_SLOTS = 1\nNUM_SLOTS_TYPE_1 = 1\nSLOT_TYPE_1 = 100%\nSLOT_TYPE_1_PARTITIONABLE = TRUE\nCONSUMPTION_POLICY = true\n"
       notify:
         - restart htcondor
-    - name: Singularity 컨테이너 프로그램을 설치합니다.
+    - name: Apptainer 컨테이너 프로그램을 설치합니다.
       package:
-        name: singularity
+        name: apptainer
         state: present
-    - name: Singularity 컨테이너 설정을 합니다.
+    - name: Apptainer 컨테이너 suid 프로그램을 설치합니다.
+      package:
+        name: apptainer-suid
+        state: present
+    - name: Apptainer 컨테이너 설정을 합니다.
       copy: 
-        dest: /etc/condor/config.d/04-singularity.config
+        dest: /etc/condor/config.d/04-apptainer.config
         content: "SINGULARITY_JOB = !isUndefined(TARGET.SingularityImage)\nSINGULARITY_IMAGE_EXPR = TARGET.SingularityImage\nSINGULARITY_TARGET_DIR = /srv\nMOUNT_UNDER_SCRATCH = /tmp, /var/tmp\nSINGULARITY_BIND_EXPR=ifThenElse( isUndefined(TARGET.SingularityBind),\"/home\",TARGET.SingularityBind)\nSINGULARITY_EXTRA_ARGUMENTS=ifThenElse( isUndefined(TARGET.SingularityExtraArgs),\"\",TARGET.SingularityExtraArgs)\n"
       notify:
         - restart htcondor

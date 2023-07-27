@@ -27,6 +27,14 @@
       file:
         path: /etc/condor
         state: absent
+    - name: Singulairty 패키지 삭제 
+      package: 
+        name: "singularity"
+        state: absent
+    - name: Apptainer 패키지 삭제 
+      package: 
+        name: "apptainer"
+        state: absent
     - name: Yum clean all
       shell:
         cmd: yum clean all

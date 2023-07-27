@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo "소설을 다운로드 합니다."
-wget http://www.gutenberg.org/cache/epub/31547/pg31547.txt
-wget http://www.gutenberg.org/cache/epub/41481/pg41481.txt
-wget http://www.gutenberg.org/cache/epub/28617/pg28617.txt
-wget http://www.gutenberg.org/cache/epub/29607/pg29607.txt
+curl -o romio.txt https://www.gutenberg.org/cache/epub/1513/pg1513.txt
+curl -o moby_dict.txt https://www.gutenberg.org/files/2701/2701-0.txt
+curl -o A_Room_with_a_view.txt   https://www.gutenberg.org/cache/epub/2641/pg2641.txt
 
