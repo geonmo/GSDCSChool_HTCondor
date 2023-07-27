@@ -6,6 +6,9 @@
   vars_files:
     - ../../ansible_setup/vars.yml
   tasks:
+    - name: Yum clean all
+      shell: 
+        cmd: yum clean all
     - name: 방화벽을 활성화합니다.
       service:
         name: firewalld

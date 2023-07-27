@@ -1,0 +1,32 @@
+---
+- name: 전과정 되돌리기 
+  gather_facts: no
+  serial: 5
+  hosts: all
+  vars_files:
+    - ../../ansible_setup/vars.yml
+  tasks:
+    - name: 방화벽을 비활성화합니다.
+      service:
+        name: firewalld
+        state: stopped
+    - name: htcondor 서비스 중단
+      service:
+        name: condor
+        state: stopped
+      ignore_errors: yes
+    - name: HTCondor 패키지 삭제 
+      package: 
+        name: "condor*"
+        state: absent
+    - name: HTCondor Release 삭제
+      package: 
+        name: htcondor-release
+        state: absent
+    - name: /etc/condor 디렉토리 삭제
+      file:
+        path: /etc/condor
+        state: absent
+    - name: Yum clean all
+      shell:
+        cmd: yum clean all
