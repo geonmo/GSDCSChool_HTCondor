@@ -4,7 +4,7 @@
   serial: 5
   hosts: central_manager, submit, execute
   vars_files:
-    - ../ansible_setup/vars.yml
+    - ../../ansible_setup/vars.yml
   tasks:
     - name: 방화벽을 활성화합니다.
       service:

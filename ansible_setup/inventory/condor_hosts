@@ -1,23 +1,23 @@
 [central_manager]
-node1.g0.gsdc.org
+node1.g0.23.gsdc.org
 [submit]
-node0.g0.gsdc.org
+node0.g0.23.gsdc.org
 [execute]
-node2.g0.gsdc.org
-node3.g0.gsdc.org
+node2.g0.23.gsdc.org
+node3.g0.23.gsdc.org
 [node_except]
-node3.g0.gsdc.org
+node3.g0.23.gsdc.org
 [node_etc]
-node2.g0.gsdc.org
+node2.g0.23.gsdc.org
 
 [node0]
-node0.g0.gsdc.org
+node0.g0.23.gsdc.org
 [node1]
-node1.g0.gsdc.org
+node1.g0.23.gsdc.org
 [node2]
-node2.g0.gsdc.org
+node2.g0.23.gsdc.org
 [node3]
-node3.g0.gsdc.org
+node3.g0.23.gsdc.org
 
 
 [central_manager:vars]
