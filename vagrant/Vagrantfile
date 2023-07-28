@@ -22,6 +22,7 @@ Vagrant.configure("2") do |config|
        
   NODES.times do |i|
     node_id = "node#{i}"
+    ### 아래 네트워크를 Virtualbox 상의 Host-only Networks를 참고하여 설정합니다.
     ip = "192.168.108.#{i+3}"
     config.vm.define node_id do |node|
       node.vm.box = "almalinux/9"
