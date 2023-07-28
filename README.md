@@ -14,8 +14,7 @@ GSDC School의 HTCondor 수업을 위한 코드 제공합니다.
    ```
 1. 본인의 조별 숫자로 ansible 세팅 작업을 수행합니다. 
    ```bash
-   ### 4조일 경우,
-   ./group_setting.sh 4
+   ./group_setting.sh 
    ``` 
 1. 모든 서버에 접속하여 계정을 생성하고 패스워드를 지정합니다.
    ```bash
