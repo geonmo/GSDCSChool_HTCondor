@@ -11,7 +11,12 @@ else
   echo "Group number is $1"
   sed -i "s/node\([0-9]\).g[0-9].23.gsdc.org/node\1.g$1.23.gsdc.org/g" ansible_setup/inventory/condor_hosts  
   sed -i "s/node\([0-9]\).g[0-9].23.gsdc.org/node\1.g$1.23.gsdc.org/g" ansible_setup/vars.yml  
-  sed -i "s/node\([0-9]\).g[0-9].23.gsdc.org/node\1.g$1.23.gsdc.org/g" tutorials/chapter4_Advanced/4-1/myinfo.jds 
+  sed -i "s/node\([0-9]\).g[0-9].23.gsdc.org/node\1.g$1.23.gsdc.org/g" tutorials/chapter4_Advanced/4-1/myinfo.jds
+ 
+  if [[ $(cat ansible_setup/vars.yml | grep nfs | wc -w) -ne 2 ]];
+  then
+     exit 0
+  fi
 
   if [[ $1 -le 3 ]]; then
     echo "school gateway 1"
