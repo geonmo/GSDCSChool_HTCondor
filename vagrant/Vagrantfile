@@ -1,0 +1,35 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+NODES = 4
+## Set on shell environment
+###VAGRANT_EXPERIMENTAL="disks"
+
+Vagrant.configure("2") do |config|
+  config.vm.provider "virtualbox" do |vb|      
+    # Display the VirtualBox GUI when booting the machine
+    vb.gui = false
+    # Customize the amount of memory on the VM:
+    vb.cpus = 1
+    vb.memory = "2048"
+    vb.linked_clone = true     
+  end
+  
+  config.vm.provision "shell", inline: <<-SHELL
+    dnf install -y epel-release  
+    dnf install -y ansible git
+  SHELL
+       
+  NODES.times do |i|
+    node_id = "node#{i}"
+    ip = "192.168.108.#{i+3}"
+    config.vm.define node_id do |node|
+      node.vm.box = "almalinux/9"
+      node.vm.hostname = "node#{i}.gsdc.school"
+      node.vm.network "private_network", ip: "#{ip}", hostname: false, name: "VirtualBox Host-Only Ethernet Adapter #2"
+      node.vm.network "forwarded_port", guest: 22, host: "#{3002+1+i}"
+    end  
+  end
+end
+
+
