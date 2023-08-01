@@ -1,7 +1,7 @@
-# Singularity 컨테이너 활용에 대해서,  
+# Apptainer 컨테이너 활용에 대해서,  
 
 ## 목표
-1. Singularity를 이용하여 특정 APP의 환경을 구축하고 실행해봅니다.
+1. Apptainer를 이용하여 특정 APP의 환경을 구축하고 실행해봅니다.
 
 ## 실습 4-3
 ### 실습
