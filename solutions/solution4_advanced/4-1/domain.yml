@@ -2,7 +2,7 @@
 - name: 실습4-1 UID와 FILESYSTEM 도메인 
   gather_facts: no
   serial: 4
-  hosts: nodeX.gY.gsdc.org 
+  hosts: central_manager,submit,node2 
   vars_files:
     - ../../../ansible_setup/vars.yml
   tasks:
@@ -17,6 +17,25 @@
       service:
         name: condor
         state: restarted
+- name: 실습4-1 UID와 FILESYSTEM 도메인 
+  gather_facts: no
+  serial: 4
+  hosts: node3 
+  vars_files:
+    - ../../../ansible_setup/vars.yml
+  tasks:
+    - name: 도메인 정보가 존재한다면 삭제합니다.
+      file: 
+        path: /etc/condor/config.d/02-domain.config
+        state: absent
+      notify:
+        - restart htcondor
+  handlers:
+    - name: restart htcondor
+      service:
+        name: condor
+        state: restarted
+
 
 
         
