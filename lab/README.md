@@ -67,7 +67,7 @@ fc-list | grep Nanum
    * 해당 파일들을 1차 가공하기 위한 간단한 스크립트인[wordcounter.py](https://github.com/geonmo/GSDCSchool_XRootD_Scripts/blob/master/utils/wordcounter.py)를 제공해드립니다. 
       * 해당 스크립트를 통해 뉴스별(드린 데이터의 1줄이 1개의 뉴스기사)로 주요 단어들을 확인하실 수 있습니다.
       * 이 스크립트를 HTCondor 배치 작업으로 실행하면 보다 빠른 시간에 작업을 마무리할 수 있습니다.
-      * 가장 간단한 방법으로 데이터를 모집하기 때문에 해당 스크립트는 성능이 좋지 않습니다. 이를 개량할 아이디어도 생각해봅시다.
+      * 가장 간단한 방법으로 데이터를 모집하기 때문에 해당 스크립트는 성능이 좋지 않습니다. 이를 [개량할 아이디어](https://konlpy.org/ko/latest/install/#centos)도 생각해봅시다.
    * wordcounter.py를 통해 출력된 결과물을 그대로 저장한 후 [loadOuput.py](https://github.com/geonmo/GSDCSChool_HTCondor/blob/main/lab/lab1/loadOutput.py)로 이를 그림으로 보실 수 있습니다.
       * 해당 프로그램은 python Pandas를 통해 데이터를 분석합니다. 
          * 폰트 설정 등이 포함되어 있으며 groupby를 통한 데이터 선택과 그래프화하는 간단한 코드입니다. 참고용으로 보시면 됩니다.
