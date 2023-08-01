@@ -18,7 +18,7 @@
 1. 설치 후, HTCondor 서비스를 재시작 합니다. ```systemctl restart condor```
 1. Submit node에서 제공된 **geant4_run.jds**와 **geant4_run.sh** 파일을 이용하여 작업을 제출합니다.
    * geant4_run.jds 에 빠진 내용을 채워봅시다.
-      * Geant4 컨테이너 이미지 파일의 위치 : ```/shared/container_images/geant4-runtime_latest.sif```
+      * Geant4 컨테이너 이미지 파일의 위치 : ```/shared/geant4_latest.sif```
       * 컨테이너 환경에서 연결한 디렉토리 : ```/shared```
       * transfer_output_files 목록은 아래 transfer_output_remaps 설정을 참고하여 작성합시다.
 1. 실행 후, brachytherapy_X.root 파일과 primary_X.root 파일이 생성되었는지를 확인합니다.
