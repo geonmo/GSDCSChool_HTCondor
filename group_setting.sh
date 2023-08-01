@@ -15,7 +15,7 @@ else
      exit 0
   fi
 
-  if [[ ${GRPNUM}1 -le 3 ]]; then
+  if [[ ${GRPNUM} -le 3 ]]; then
     echo "school gateway 1"
     sed -i "s/nfs_server :/nfs_server : \"10.10.10.226\"/g" ansible_setup/vars.yml
   else
