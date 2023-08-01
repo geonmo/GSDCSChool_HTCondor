@@ -1,0 +1,11 @@
+---
+- name: Vagrant 사용자 전용 셋업
+  serial: 5
+  hosts: central_manager, submit, execute
+  become: true
+  tasks:
+    - name: 기본 호스트(127.0.0.1) 이름 내용 삭제
+      replace:
+        path: /etc/hosts
+        regexp: '^127.0.0.1\s*node?.*'
+        replace: ''
