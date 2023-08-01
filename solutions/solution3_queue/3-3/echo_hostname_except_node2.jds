@@ -3,7 +3,7 @@ executable = echo_hostname_groupnum.sh
 universe = vanilla 
 output = queue.$(Process).out  
 error =  queue.$(Process).err
-requirements = (machine =!= "node2.g0.gsdc.org")
+requirements = (machine =!= "node2.g1.23.gsdc.org")
 log   =  submit.log
 
 should_transfer_files   = YES
