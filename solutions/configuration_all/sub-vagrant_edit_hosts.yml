@@ -1,4 +1,17 @@
 ---
+- name: Host 수정
+  hosts: localhost
+  become: true
+  tasks:
+    - name: 호스트 이름 추가
+      lineinfile:
+        path: /etc/hosts
+        line: "
+{{ ansible_facts['eth1']['ipv4']['network'] | replace('.0','.3') }} node0.gsdc.org\n
+{{ ansible_facts['eth1']['ipv4']['network'] | replace('.0','.4') }} node1.gsdc.org\n
+{{ ansible_facts['eth1']['ipv4']['network'] | replace('.0','.5') }} node2.gsdc.org\n
+{{ ansible_facts['eth1']['ipv4']['network'] | replace('.0','.6') }} node3.gsdc.org\n"
+
 - name: Vagrant 사용자 전용 셋업
   serial: 5
   hosts: central_manager, submit, execute
@@ -9,3 +22,11 @@
         path: /etc/hosts
         regexp: '^127.0.0.1\s*node?.*'
         replace: ''
+    - name: 호스트 이름 추가
+      lineinfile:
+        path: /etc/hosts
+        line: "
+{{ ansible_facts['eth1']['ipv4']['network'] | replace('.0','.3') }} node0.gsdc.org\n
+{{ ansible_facts['eth1']['ipv4']['network'] | replace('.0','.4') }} node1.gsdc.org\n
+{{ ansible_facts['eth1']['ipv4']['network'] | replace('.0','.5') }} node2.gsdc.org\n
+{{ ansible_facts['eth1']['ipv4']['network'] | replace('.0','.6') }} node3.gsdc.org\n"

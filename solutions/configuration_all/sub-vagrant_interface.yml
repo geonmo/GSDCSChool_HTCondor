@@ -1,0 +1,14 @@
+---
+- name: Vagrant 사용자 전용 셋업
+  serial: 5
+  hosts: central_manager, submit, execute
+  become: true
+  tasks:
+    - name: 네트워크 장비 변경
+      copy:
+        dest: /etc/condor/config.d/06-interface.config
+        content: "NETWORK_INTERFACE = {{ ansible_facts['eth1']['ipv4']['address'] }}"
+
+    - service:
+        name: condor
+        state: restarted

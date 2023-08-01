@@ -1,7 +1,9 @@
 #!/bin/bash
 
-ansible -u $USER -K sub-vagrant_edit_hosts.yml
+sed -i "s/g[0-9].23.//g" ../../ansible_setup/vars.yml
+sed -i "s/g[0-9].23.//g" ../../ansible_setup/inventory/condor_hosts
 
-sed -i "s/g1.23//g" ../../ansible_setup/vars.yml
+ansible-playbook -b -u $USER -K sub-vagrant_edit_hosts.yml
+ansible-playbook -b -u $USER -K 10-all_setup.yml
+ansible-playbook -b -u $USER -K sub-vagrant_interface.yml 
 
-ansible -u $USER -K 10-all_setup.yml 
