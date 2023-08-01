@@ -9,14 +9,16 @@
     - name: Yum clean all
       shell: 
         cmd: yum clean all
+    - name: 방화벽 패키지를 설치합니다.
+      package:
+        name: firewalld
+        state: present
     - name: 방화벽을 활성화합니다.
       service:
         name: firewalld
         state: started
     - name: HTCondor 패키지를 설치 여부를 확입합니다. 
-      command: rpm -q condor
-      args:
-        warn: false
+      command: rpm -q condor      
       register: condor_installed
       ignore_errors: true
     - name: HTCondor 패키지를 설치합니다. 설치가 되어있다면 넘어갑니다. 
