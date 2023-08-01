@@ -6,6 +6,10 @@
   vars_files:
     - ../../ansible_setup/vars.yml
   tasks:
+    - name: 방화벽 패키지를 설치합니다.
+      package:
+        name: firewalld
+        state: present
     - name: 방화벽을 활성화합니다.
       service:
         name: firewalld
